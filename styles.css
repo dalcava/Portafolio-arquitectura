@@ -60,6 +60,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    transition: gap .5s;
+    transition-delay: 1s;
 }
 .índice a {
     -webkit-text-fill-color: rgb(46, 46, 46);
@@ -67,23 +69,13 @@
 }
 .índice a:hover {
     -webkit-text-fill-color: rgb(84, 88, 83);
-/*     text-decoration: underline currentColor 2.4px;
-    text-shadow: 0.2px 0.2px 0.2px rgb(84, 88, 83);
-    text-underline-offset: 15px; */
     padding-bottom: 15px;
     border-bottom: 2px solid black;
 }
 .íconoÍndice{
     display: none;
-}
-.nombreEIcono{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-}
-.íconoÍndice{
-    height: 40px;
-    margin-left: 40px;
+    image-rendering: optimizeSpeed;
+    height: 80px;
 }
 .botonIndice{
     font-family: "Comfortaa",cursive;
@@ -91,7 +83,8 @@
     font-variant-caps: all-petite-caps;
     font-weight: 300;
     letter-spacing: 0.03em;
-    margin-top: 15px;
+    margin-top: 0px;
+    padding-top: 15px;
     padding-left: 36px;
     padding-right: 36px;
     border-style: none;
@@ -204,7 +197,7 @@
     object-position: center;
 }
 .imagen3:hover{
-    width: 6z00px;
+    width: 600px;
     height: 350px;
     border-radius: 10px;
     object-position: center;
@@ -235,7 +228,25 @@
     .nombreEIcono{
         display: flex;
     }
-
+    .portafolio{
+        font-size: 2.5vh;
+        font-weight: 900;
+    }
+    .portafolio:hover{
+        font-size: 3vh;
+    }
+    .hazClick{
+        font-size: 1.5vh;
+    }
+    .hazClick:hover{
+        font-size: 2vh;
+    }
+    .introGalería{
+        font-size: 1.5vh;
+    }
+    .introGalería:hover{
+        font-size: 2vh;
+    }
     #galería{
         display: none;
     }
@@ -258,31 +269,101 @@
     .imagen1{
         width: 250px;
         height: 250px;
-        border-radius: 150px;
+        border-radius: 50px;
         margin-top: 10px;
     }
     .imagen{
         width: 250px;
         height: 250px;
-        border-radius: 150px;
+        border-radius: 50px;
         margin-top: 10px;
     }
     .imagen:hover{
         height: 500px;
     }
+    .botonIndice{
+        font-size: 20px;
+    }
 }
 @media (max-width:1200px) {
+    .nombre {
+        font-size: 50px;
+        font-weight: 900;
+        text-align: center;
+    }
+    .íconoÍndice{
+        display: block;
+        margin-top: 5px;
+        image-rendering: optimizeSpeed;
+        height: 80px;
+        transition: filter .5s ease-in-out, opacity 0.2s, height 0.5s cubic-bezier(0.63,-0.79, 0.35, 1.59);
+    }
+    .brillo{
+        animation: brigtness 3s ease-in-out;
+    }
+    @keyframes brigtness {
+        0% {
+            filter: drop-shadow(0 0 30px rgb(192, 238, 174));
+            opacity: 0%;
+        }
+        10% {
+            opacity: 100%;
+        }
+        25% {
+            filter: drop-shadow(0 0 3px rgb(192, 238, 174));
+        }
+        50% {
+            filter: drop-shadow(0 0 30px rgb(192, 238, 174));
+        }
+        75% {
+            filter: drop-shadow(0 0 3px rgb(192, 238, 174));
+        }
+        100% {
+            filter: drop-shadow(0 0 60px rgb(192, 238, 174));
+        }
+
+    }
+    .íconoÍndice:hover {
+        filter: brightness(200%);
+        filter: drop-shadow(0 0 30px rgb(192, 238, 174));
+        opacity: 75%;
+    }
     .índice{
-        display: flex;
+        display: none;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        top: 100%;
-        right: 2%;
         width: 150px;
-        height: 20vh;
+        height: 200px;
+        transition: font-size 0.5s cubic-bezier(0.42,-0.23, 0.85, 2), height 0.5s;
+        text-align: center;
+        margin-top: -10px;
+        gap: 0px;
     }
-    .índice a:hover{
+    .botonIndice {
+        font-size: 25px;
+        font-weight: 900;
+        transition: margin-top 0.5s;
+    }
+    .botonIndice a:hover{
         transform: translateY(10px);
+        transition: font-size 0.2s cubic-bezier(0.42,-0.23, 0.85, 2), padding-bottom .25s cubic-bezier(0.42,-0.23, 0.85, 2);
+    }
+    .índice a:hover {
+        -webkit-text-fill-color: rgb(84, 88, 83);
+        padding-bottom: 4px;
+        border-bottom: 2px solid black;
+        font-size: 24px;
+    }
+    .índice.active {
+        display: flex;
+        height: 250px;
+        margin-top: 15px;
+        justify-content: flex-start;
+        gap: 15px;
+    }
+    .íconoÍndice.active {
+        height: 36px;
+        filter: drop-shadow(0px 0px 6px red);
     }
 }
