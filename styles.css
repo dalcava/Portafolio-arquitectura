@@ -10,12 +10,38 @@
     align-items: center;
     margin: 24px;
 }
+#cabecera1{
+    display: grid;
+    grid-template-columns: 400px auto;
+    align-items: center;
+    justify-content: center;
+    height: 1000px;
+}
+.retrato{
+    height: 500px;
+    filter:drop-shadow(15px);
+}
+.retrato:hover{
+    height: 600px;
+}
+.hidden{
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateX(-100%);
+    transition: all 1.25s;
+}
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
 .cabecera2{
     display: flex;
     margin: 8px;
     flex-direction: column;
     align-items: center;
     padding: 10px;
+    grid-column: 2;
 }
 .nombre{
     font-family: "Comfortaa",cursive;
@@ -26,6 +52,11 @@
     margin: 0px;
     margin-top: 20px;
     padding: 0px;
+    height: 700px;
+    grid-column: 1
+}
+.nombre:hover{
+    font-size: 45px;
 }
 .portafolio{
     font-family: "Comfortaa",cursive;
@@ -35,7 +66,7 @@
     letter-spacing: 0.03em;
     margin: 12px;
     padding: 0px;
-    transition: font-size .5s;
+    transition: font-size .25s;
 }
 .portafolio:hover{
     font-size: 30px;
@@ -60,9 +91,12 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    transition: gap .5s;
+    transition: gap .25s;
     transition-delay: 1s;
+    position: relative;
+    margin-bottom: 15px;
 }
+
 .índice a {
     -webkit-text-fill-color: rgb(46, 46, 46);
     transition:border-bottom 0.15s, padding-bottom 0.3s, width 0.2s;
@@ -115,8 +149,8 @@
     margin-bottom: 50px;
     padding: 0px;
     width: 480px;
-    text-align: center;
-    transition: font-size 0.5s;
+    transition: all 0.5s;
+    grid-column: 3
 }
 .introGalería:hover {
     font-size: 15px;
@@ -124,34 +158,48 @@
 .container{
     display: flex;
     background-color: rgb(210, 210, 210);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
     position: absolute;
     height: 1475px;
     width: 786px;
     transform: translate(-8px, -8px);
     opacity: 20%;
     border-radius: 83px;
-    box-shadow: 0px 0px 20px gray;
-    transition: width .5s cubic-bezier(0.42, 0, 0.42, 1.57);
-    transition-delay: .5s
+    transition: all .5s cubic-bezier(0.42, 0, 0.42, 1.57);
+    transition-delay: all .25s;
+    filter:blur(0px);
 }
 .contain1{
-    width: 1200px;
-    transform: translate(10px, -8px);
+    width: 1825px;
+    height: 1000px;
+    transform: translate(-300px, 48px);
 }
 .contain2{
-    width: 1200px;
-    height: 1623px;
-    transform: translate(10px, -8px);
+    width: 1825px;
+    height: 1000px;
+    transform: translate(-310px, 8px);
 }
 .contain3{
     width: 903px;
     height: 1623px;
-    transform: translate(10px, -8px);
+    transform: translate(-480px, -8px);
 }
 .contain4{
-    width: 1100px;
-    height: 1623px;
-    transform: translate(10px, -8px);
+    width: 1825px;
+    height: 1100px;
+    transform: translate(-360px, 133px);
+}
+.contain5{
+    width: 1825px;
+    height: 630px;
+    transform: translate(-300px, 733px);
+}
+.contain6{
+    width: 1775px;
+    height: 1000px;
+    transform: translate(-300px, 533px);
 }
 #galería{
     display: flex;
@@ -159,6 +207,7 @@
     column-gap: 10px;
     row-gap: 10px;
     align-items: flex-start;
+    transition-delay: .25s;
 }
 #galeríaCel{
     display: none;
@@ -170,6 +219,7 @@
     column-gap: 10px;
     row-gap: 10px;
     position:relative;
+    transition-delay: .5s;
 }
 #galería2{
     display: flex;
@@ -178,6 +228,7 @@
     column-gap: 10px;
     row-gap: 10px;
     position:relative;
+    transition-delay: .75s;
 }
 #galería3{
     display: flex;
@@ -186,6 +237,7 @@
     column-gap: 10px;
     row-gap: 10px;
     position:relative;
+    transition-delay: 1s;
 }
 .imagen{
     width: 250px;
@@ -193,9 +245,10 @@
     border-radius: 75px;
     object-fit: cover;
     object-position: left center;
-    transition: width 1s, height 1s, object-fit 0.5s, border-radius 0.5s;
-    transition-delay: .5s;
+    transition: width .75s, height .75s, object-fit 0.5s, border-radius 0.5s;
+    transition-delay: .25s;
     overflow: hidden;
+    box-shadow:1px 1px 5px rgb(172, 185, 165)
 }
 .imagen1{
     width: 250px;
@@ -204,9 +257,10 @@
     object-fit: cover;
     object-position: left center;
     overflow: hidden;
-    transition: width 1s, height 1s, object-fit 0.5s, border-radius 0.5s;
-    transition-delay: .5s;
+    transition: width .75s, height .75s, object-fit 0.5s, border-radius 0.5s;
+    transition-delay: .25s;
     box-sizing: border-box;
+    box-shadow:1px 1px 5px rgb(172, 185, 165)
 }
 .imagen2{
     width: 250px;
@@ -215,9 +269,10 @@
     object-fit: cover;
     object-position: left center;
     overflow: hidden;
-    transition: width 1s, height 1s, object-fit 0.5s, border-radius 0.5s;
-    transition-delay: .5s;
+    transition: width .75s, height .75s, object-fit 0.5s, border-radius 0.5s;
+    transition-delay: .25s;
     box-sizing: border-box;
+    box-shadow:1px 1px 5px rgb(172, 185, 165)
 }
 .imagen3{
     width: 250px;
@@ -225,9 +280,10 @@
     border-radius: 75px;
     object-fit: cover;
     object-position: left center;
-    transition: width 1s, height 1s, object-fit 0.5s, border-radius 0.5s;
-    transition-delay: .5s;
+    transition: width .75s, height .75s, object-fit 0.5s, border-radius 0.5s;
+    transition-delay: .25s;
     overflow: hidden;
+    box-shadow:1px 1px 5px rgb(172, 185, 165)
 }
 .imagen:hover{
     width: 700px;
@@ -325,6 +381,9 @@
     }
 }
 @media (max-width:1200px) {
+    .hidden{
+        transition: none;
+    }
     .nombre {
         font-size: 50px;
         font-weight: 900;
