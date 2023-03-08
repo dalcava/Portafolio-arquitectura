@@ -7,7 +7,9 @@
     font-family: Arial, Helvetica, sans-serif;
     src: url("../fonts/Helvetica.TTF");
 }
-
+body {
+    background: linear-gradient(173deg, rgba(46,46,46,1) 25%, rgba(46,46,46,1) 33%, rgba(255,255,255,0) 37%);
+}
 #Cabecera{
     display: flex;
     flex-direction: column;
@@ -15,6 +17,7 @@
     margin: 0px;
     padding: 24px;
     overflow: hidden;
+    height: 900px;
 }
 .backcabecera{
     display: block;
@@ -23,9 +26,14 @@
     position: absolute;
     background: linear-gradient(131deg, rgb(0, 139, 109) 0%, rgb(0, 255, 157) 20%, rgb(181, 244, 213) 45%, rgba(227,244,181,0) 85%);
     border-radius: 10% 10% 0% 100% / 0% 0% 64% 73%;
-    transform: translateY(-48px);
+    transform: translate(-8px, -19px);
     z-index: 0;
     opacity: 50%;
+    overflow: hidden;
+}
+.backcabeceraAnimación{
+    width: 100%;
+    opacity: 20%;
 }
 #cabecera1{
     display: grid;
@@ -35,14 +43,15 @@
     height: 1000px;
 }
 .retrato{
-    height: 500px;
-    filter:drop-shadow(15px);
+    height: 200px;
     z-index: 3;
     transition: all .5s;
+    opacity: 10%;
+    grid-column: 4;
 }
 .retrato:hover{
-    height: 600px;
-    filter: brightness(110%);
+    height: 400px;
+    filter: brightness(50%);
 }
 .tarjetaNombre{
     height: 300px;
@@ -58,9 +67,9 @@
     opacity: 0%;
 }
 .tarjetaNombreExpand {
-    height: 400px;
-    width: 800px;
-    background-color: rgb(131, 207, 169, 0.35);
+    height: 233px;
+    width: 325px;
+    background-color: rgba(219, 219, 219, 0.25);
     border-radius: 4% 20% 20% 4% / 8% 30% 30% 7%;
     transform: translate(100px, -86px);
     box-shadow:4px 4px 4px rgba(0, 71, 56, 0.5);
@@ -81,7 +90,7 @@
     font-weight: 900;
     letter-spacing: 0.03em;
     width: 300px;
-    color: whitesmoke;
+    color: rgb(255, 225, 197);
     height: 43px;
     text-align: end;
 }
@@ -91,8 +100,8 @@
     font-weight: 300;
     letter-spacing: 0.03em;
     width: 298px;
-    color: rgb(109, 109, 109);
-    text-align: end;
+     text-align: end;
+    color: rgb(255, 255, 255);
 }
 .hidden{
     opacity: 0;
@@ -104,6 +113,14 @@
     opacity: 1;
     filter: blur(0);
     transform: translateX(0);
+}
+.retrato.show{
+    opacity: 1;
+    filter: brightness(.55);
+}
+.retrato.show:hover{
+    opacity: .95;
+    filter: brightness(.75);
 }
 .cabecera2{
     display: flex;
@@ -117,19 +134,23 @@
 }
 .nombre{
     font-family: "Urbanist";
-    font-size: 630px;
+    font-size: 530px;
     font-variant-caps: all-petite-caps;
     font-weight: 900;
     letter-spacing: 0.05em;
     margin: 0px;
     margin-top: 20px;
     padding: 0px;
-    height: 700px;
+    height: 400px;
     grid-column: 1;
-    color: white;
+    color: rgba(46,46,46,1);
     z-index: 2;
     transition: all .75s;
-    pointer-events:visibleFill
+    pointer-events:visibleFill;
+    grid-column: 1;
+    grid-row: 1;
+    transform: translate(-192px, 79px);
+    opacity: 100%;
 }
 /* .nombre:hover{
     font-size: 80px;
@@ -144,6 +165,7 @@
     padding: 0px;
     transition: font-size .25s;
     z-index: 3;
+    color: whitesmoke;
 }
 .portafolio:hover{
     font-size: 30px;
@@ -160,6 +182,7 @@
     text-align: center;
     transition:font-size 0.25s;
     z-index: 2;
+    color: whitesmoke;
 }
 .hazClick:hover {
     font-size: 15px;
@@ -221,7 +244,7 @@
 }
 .introGalería{
     font-family: "Comfortaa",cursive;
-    font-size: 17px;
+    font-size: 15px;
     font-variant-caps:titling-caps;
     font-weight: 100;
     letter-spacing: 0.1em;
@@ -231,13 +254,15 @@
     transition: all 0.5s;
     grid-column: 3;
     z-index: 3;
+    transform: translate(-558px, -23px);
+    color: whitesmoke;
 }
 .introGalería:hover {
     font-size: 20px;
 }
 .container{
     display: flex;
-    background-color: rgb(210, 210, 210);
+    background-color: rgb(255, 255, 255);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
