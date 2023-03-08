@@ -1,14 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Urbanist:wght@900&display=swap');
 @font-face {
     font-family: "Montserrat";
     src: url("../fonts/Montserrat.TTF");
+}
+@font-face {
+    font-family: Arial, Helvetica, sans-serif;
+    src: url("../fonts/Helvetica.TTF");
 }
 
 #Cabecera{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 24px;
+    margin: 0px;
+    padding: 24px;
+    overflow: hidden;
+}
+.backcabecera{
+    display: block;
+    height: 600px;
+    width: 100%;
+    position: absolute;
+    background: linear-gradient(131deg, rgb(0, 139, 109) 0%, rgb(0, 255, 157) 20%, rgb(181, 244, 213) 45%, rgba(227,244,181,0) 85%);
+    border-radius: 10% 10% 0% 100% / 0% 0% 64% 73%;
+    transform: translateY(-48px);
+    z-index: 0;
+    opacity: 50%;
 }
 #cabecera1{
     display: grid;
@@ -20,9 +37,62 @@
 .retrato{
     height: 500px;
     filter:drop-shadow(15px);
+    z-index: 3;
+    transition: all .5s;
 }
 .retrato:hover{
     height: 600px;
+    filter: brightness(110%);
+}
+.tarjetaNombre{
+    height: 300px;
+    width: 300px;
+    background-color: rgb(131, 207, 169, 0);
+    border-radius: 300px;
+    position: absolute;
+    transform: translate(506px, -86px);
+    z-index: 2;
+    transition: all 1s;
+    display: flex;
+    flex-direction: column;
+    opacity: 0%;
+}
+.tarjetaNombreExpand {
+    height: 400px;
+    width: 800px;
+    background-color: rgb(131, 207, 169, 0.35);
+    border-radius: 4% 20% 20% 4% / 8% 30% 30% 7%;
+    transform: translate(100px, -86px);
+    box-shadow:4px 4px 4px rgba(0, 71, 56, 0.5);
+    opacity: 100%;
+}
+.tarjetaNombreInterior{
+    display: flex;
+    width: 136px;
+    height: 100px;
+    flex-direction: column;
+    transform: translateX(176px);
+    align-items: flex-end;
+}
+.descripciónNombre {
+    font-family: "Urbanist",cursive;
+    font-size: 35px;
+    font-variant-caps: all-petite-caps;
+    font-weight: 900;
+    letter-spacing: 0.03em;
+    width: 300px;
+    color: whitesmoke;
+    height: 43px;
+    text-align: end;
+}
+.descripciónNombre2{
+    font-family: "Comfortaa",cursive;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 0.03em;
+    width: 298px;
+    color: rgb(109, 109, 109);
+    text-align: end;
 }
 .hidden{
     opacity: 0;
@@ -41,23 +111,29 @@
     flex-direction: column;
     align-items: center;
     padding: 10px;
-    grid-column: 2;
+    grid-column: 1 / 4;
+    grid-row: 2;
+    width: 100%;
 }
 .nombre{
-    font-family: "Comfortaa",cursive;
-    font-size: 40px;
+    font-family: "Urbanist";
+    font-size: 630px;
     font-variant-caps: all-petite-caps;
-    font-weight: 500;
-    letter-spacing: 0.14em;
+    font-weight: 900;
+    letter-spacing: 0.05em;
     margin: 0px;
     margin-top: 20px;
     padding: 0px;
     height: 700px;
-    grid-column: 1
+    grid-column: 1;
+    color: white;
+    z-index: 2;
+    transition: all .75s;
+    pointer-events:visibleFill
 }
-.nombre:hover{
-    font-size: 45px;
-}
+/* .nombre:hover{
+    font-size: 80px;
+} */
 .portafolio{
     font-family: "Comfortaa",cursive;
     font-size: 25px;
@@ -67,6 +143,7 @@
     margin: 12px;
     padding: 0px;
     transition: font-size .25s;
+    z-index: 3;
 }
 .portafolio:hover{
     font-size: 30px;
@@ -82,6 +159,7 @@
     width: 220px;
     text-align: center;
     transition:font-size 0.25s;
+    z-index: 2;
 }
 .hazClick:hover {
     font-size: 15px;
@@ -95,6 +173,7 @@
     transition-delay: 1s;
     position: relative;
     margin-bottom: 15px;
+    z-index: 2;
 }
 
 .índice a {
@@ -110,7 +189,7 @@
 .íconoÍndice{
     display: none;
     image-rendering: optimizeSpeed;
-    height: 80px;
+    height: 180px;
 }
 .botonIndice{
     font-family: "Comfortaa",cursive;
@@ -128,7 +207,7 @@
     list-style-type: none;
 }
 .índice:hover > .botonIndice{
-    opacity: .5;
+    opacity: .30;
 }
 .índice:hover > .botonIndice:hover{
     opacity: 1;
@@ -142,7 +221,7 @@
 }
 .introGalería{
     font-family: "Comfortaa",cursive;
-    font-size: 12px;
+    font-size: 17px;
     font-variant-caps:titling-caps;
     font-weight: 100;
     letter-spacing: 0.1em;
@@ -150,10 +229,11 @@
     padding: 0px;
     width: 480px;
     transition: all 0.5s;
-    grid-column: 3
+    grid-column: 3;
+    z-index: 3;
 }
 .introGalería:hover {
-    font-size: 15px;
+    font-size: 20px;
 }
 .container{
     display: flex;
@@ -217,7 +297,7 @@
     flex-direction: column;
     align-items: flex-end;
     column-gap: 10px;
-    row-gap: 10px;
+    row-gap: 20px;
     position:relative;
     transition-delay: .5s;
 }
@@ -226,7 +306,7 @@
     flex-direction: column;
     align-items: center;
     column-gap: 10px;
-    row-gap: 10px;
+    row-gap: 15px;
     position:relative;
     transition-delay: .75s;
 }
@@ -235,7 +315,7 @@
     flex-direction: column;
     align-items: flex-start;
     column-gap: 10px;
-    row-gap: 10px;
+    row-gap: 15px;
     position:relative;
     transition-delay: 1s;
 }
@@ -311,14 +391,20 @@
 }
 
 @media (max-width:1600px) {
-    #Cabecera{
+    #cabecera1 {
         display: flex;
         align-items: center;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
+        justify-content: center;
+        height: 945px;
+        flex-direction: column;
+        row-gap: 24px;
+        margin-bottom: 0px;
     }
     .nombre{
+        font-size: 50px;
+        font-weight: 900;
         display: flex;
+        height: 50px;
     }
     .nombreEIcono{
         display: flex;
@@ -338,6 +424,7 @@
     }
     .introGalería{
         font-size: 1.5vh;
+        text-align: center;
     }
     .introGalería:hover{
         font-size: 2vh;
@@ -381,27 +468,54 @@
     }
 }
 @media (max-width:1200px) {
-    .hidden{
-        transition: none;
+    #Cabecera{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 24px;
+        background: rgb(34,193,195);
+        background: linear-gradient(180deg, rgba(137, 194, 180, 0.25) 0%, rgba(253,187,45,0.15) 20%, rgba(255,255,255,0) 70%);
+        border-radius: 20px;
+        box-shadow: -10px -10px 30px rgb(109 134 128 / 10%);
     }
+    #cabecera1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50%;
+        flex-direction: column;
+        row-gap: 50px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+/*     .hidden{
+        transition: none;
+    } */
     .nombre {
-        font-size: 50px;
-        font-weight: 900;
         text-align: center;
+        height: 75px;
     }
     .íconoÍndice{
         display: block;
-        margin-top: 5px;
         image-rendering: optimizeSpeed;
-        height: 80px;
-        transition: filter .5s ease-in-out, opacity 0.2s, height 0.5s cubic-bezier(0.63,-0.79, 0.35, 1.59);
+        height: 180px;
+        transition: all 0.75s cubic-bezier(0.63,-0.79, 0.35, 1.59);
+        margin-bottom: 25px;
+        filter: drop-shadow(2px 4px 6px green);
+    }
+    #muestra {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 24px;
+        margin-top: -18px;
     }
     .brillo{
         animation: brigtness 3s ease-in-out;
     }
     @keyframes brigtness {
         0% {
-            filter: drop-shadow(0 0 30px rgb(192, 238, 174));
+            filter: drop-shadow(0 0 30px rgb(74, 219, 17));
             opacity: 0%;
         }
         10% {
@@ -412,12 +526,15 @@
         }
         50% {
             filter: drop-shadow(0 0 30px rgb(192, 238, 174));
+            opacity: 75%;
         }
         75% {
-            filter: drop-shadow(0 0 3px rgb(192, 238, 174));
+            filter: drop-shadow(0 0 60px rgb(192, 238, 174));
+            opacity: 100%;
         }
         100% {
-            filter: drop-shadow(0 0 60px rgb(192, 238, 174));
+            filter: drop-shadow(2px 4px 6px green);
+            image-rendering: optimizeSpeed;
         }
 
     }
@@ -432,8 +549,8 @@
         align-items: center;
         justify-content: center;
         width: 150px;
-        height: 200px;
-        transition: font-size 0.5s cubic-bezier(0.42,-0.23, 0.85, 2), height 0.5s;
+        height: 20px;
+        transition: all 0.75s cubic-bezier(0.42,-0.23, 0.85, 2);
         text-align: center;
         margin-top: -10px;
         gap: 0px;
@@ -442,10 +559,12 @@
         font-size: 25px;
         font-weight: 900;
         transition: margin-top 0.5s;
+        height: 32px;
+        transition: all 0.5s cubic-bezier(0.42,-0.23, 0.85, 2);
     }
     .botonIndice a:hover{
         transform: translateY(10px);
-        transition: font-size 0.2s cubic-bezier(0.42,-0.23, 0.85, 2), padding-bottom .25s cubic-bezier(0.42,-0.23, 0.85, 2);
+        transition: all 0.55s;
     }
     .índice a:hover {
         -webkit-text-fill-color: rgb(84, 88, 83);
@@ -453,15 +572,26 @@
         border-bottom: 2px solid black;
         font-size: 24px;
     }
+    .índice a:hover {
+        height: 40px;
+    }
     .índice.active {
         display: flex;
         height: 250px;
-        margin-top: 15px;
+        margin-top: 0px;
         justify-content: flex-start;
         gap: 15px;
+        height: 220px;
+    }
+    .botonIndice .hidden {
+        transform: translateY(100);
+    }
+    .botonIndice .show {
+        transform: translateY(0);
     }
     .íconoÍndice.active {
-        height: 36px;
+        height: 46px;
         filter: drop-shadow(0px 0px 6px red);
+        opacity: 20%;
     }
 }

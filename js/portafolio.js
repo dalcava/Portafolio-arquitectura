@@ -2,6 +2,7 @@ const icono = document.getElementsByClassName("íconoÍndice")[0];
 const abrirMenu = document.getElementsByClassName("índice")[0];
 const botonIndice = document.getElementsByClassName("botonIndice")[0];
 const backGalería = document.querySelector(".container");
+const backRetrato = document.querySelector(".tarjetaNombre");
 var imagen = document.getElementsByClassName("imagen")[0];
 var imagen1 = document.getElementsByClassName("imagen")[1];
 var imagen2 = document.getElementsByClassName("imagen")[2];
@@ -24,6 +25,8 @@ var imagen33 = document.getElementsByClassName("imagen3")[3];
 var imagen34 = document.getElementsByClassName("imagen3")[4];
 var imagen35 = document.getElementsByClassName("imagen3")[5];
 
+const retrato = document.querySelector(".retrato");
+
 const observer = new IntersectionObserver((entries)=> {
     entries.forEach((entry)=>{
         console.log(entry);
@@ -33,6 +36,8 @@ const observer = new IntersectionObserver((entries)=> {
             entry.target.classList.remove("show");
         }
     })
+}, {
+    threshold: 0
 })
 const hiddenElements = document.querySelectorAll ('.hidden');
 hiddenElements.forEach((el)=>observer.observe(el));
@@ -63,6 +68,9 @@ function expandirBack5 (){
 }
 function expandirBack6 (){
     backGalería.classList.toggle("contain6");
+}
+function expandirRetrato (){
+    backRetrato.classList.toggle("tarjetaNombreExpand");
 }
 
 imagen10.addEventListener("mouseover", expandirBack1);
@@ -107,6 +115,9 @@ imagen34.addEventListener("mouseover", expandirBack6);
 imagen34.addEventListener("mouseleave", expandirBack6);
 imagen35.addEventListener("mouseover", expandirBack6);
 imagen35.addEventListener("mouseleave", expandirBack6);
+
+retrato.addEventListener("mouseover", expandirRetrato);
+retrato.addEventListener("mouseleave", expandirRetrato);
 
 const container = document.querySelector(".container");
 
