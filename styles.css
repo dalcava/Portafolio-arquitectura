@@ -493,6 +493,9 @@ body {
     }
 }
 @media (max-width:1200px) {
+    body {
+        background: rgba(46,46,46,1);
+    }
     #Cabecera{
         display: flex;
         flex-direction: column;
@@ -502,6 +505,8 @@ body {
         background: linear-gradient(180deg, rgba(137, 194, 180, 0.25) 0%, rgba(253,187,45,0.15) 20%, rgba(255,255,255,0) 70%);
         border-radius: 20px;
         box-shadow: -10px -10px 30px rgb(109 134 128 / 10%);
+        position: relative;
+        height: auto;
     }
     #cabecera1 {
         display: flex;
@@ -513,12 +518,47 @@ body {
         margin-top: 50px;
         margin-bottom: 50px;
     }
-/*     .hidden{
+    .retrato{
+        height: 333px;
+    }
+    .retrato.show{
+        filter: brightness(.7)
+    }
+    .retrato.show:hover{
+        transform: translate(-156px, 24px);
+        filter: brightness(.85);
+    }
+    .tarjetaNombreExpand{
+        height: 523px;
+        width: 387px;
+    }
+    .tarjetaNombreInterior {
+        display: flex;
+        width: 200px;
+        height: 200px;
+        flex-direction: column-reverse;
+        transform: translate(147px,284px);
+        align-items: flex-end;
+    }
+    .descripciónNombre {
+        font-size: 43px;
+    }
+    .descripciónNombre2 {
+        font-size: 27px;
+    }
+    /*     .hidden{
         transition: none;
     } */
     .nombre {
         text-align: center;
         height: 75px;
+    }
+    .portafolio{
+        font-size: 30px;
+        font-weight: 900;
+    }
+    .portafolio:hover{
+        font-size: 25px;
     }
     .íconoÍndice{
         display: block;
@@ -560,8 +600,19 @@ body {
         100% {
             filter: drop-shadow(2px 4px 6px green);
             image-rendering: optimizeSpeed;
+            opacity: 50%;
         }
 
+    }
+    .introGalería{
+        transform: translate(0px, 0px);
+        font-size: 22px;
+    }
+    .introGalería:hover{
+        font-size: 30px;
+    }
+    .tarjetaNombre{
+        transform: translate(167px, -460px);
     }
     .íconoÍndice:hover {
         filter: brightness(200%);
@@ -586,10 +637,15 @@ body {
         transition: margin-top 0.5s;
         height: 32px;
         transition: all 0.5s cubic-bezier(0.42,-0.23, 0.85, 2);
+        color:antiquewhite
     }
     .botonIndice a:hover{
         transform: translateY(10px);
         transition: all 0.55s;
+    }
+    
+    .índice a {
+    -webkit-text-fill-color: rgb(231 231 231);
     }
     .índice a:hover {
         -webkit-text-fill-color: rgb(84, 88, 83);
@@ -614,9 +670,12 @@ body {
     .botonIndice .show {
         transform: translateY(0);
     }
+    .íconoÍndice{
+        opacity: 50%;
+    }
     .íconoÍndice.active {
         height: 46px;
         filter: drop-shadow(0px 0px 6px red);
-        opacity: 20%;
+        opacity: 30%;
     }
 }
