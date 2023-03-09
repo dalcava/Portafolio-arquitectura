@@ -3,29 +3,31 @@
     <head>
         <meta charset="utf-8">
         <title>David Alfonso López</title>
-        <link href="styles.css" rel="stylesheet"/>
+        <link href="./css/styles.css" rel="stylesheet"/>
         <script defer src="./js/portafolio.js"></script>
 
 </head>
 <body>
-    <div class="backcabecera">
-        <img src="../gifs/cabecera portafolio arqui.gif" class="backcabeceraAnimación">
-    </div>
     <section id="Cabecera">
-        <div id="cabecera1">
-            <h1 class="nombre hidden">Arte y técnica</h1>
-            <div class="tarjetaNombre">
-                <div class="tarjetaNombreInterior">
-                    <p class="descripciónNombre hidden">
-                        &nbsp&nbsp&nbsp <b>David Alfonso López Castañeda</b>
-                    </p>
-                    <p class="descripciónNombre2 hidden">
-                        Arquitecto especializado en <b>diseño gráfico</b> y <b>visualización arquitectónica</b>, 
-                        <b>modelado 3d</b>, gestión de proyectos y resolución de problemas.
-                    </p>
-                </div>
+        <div class="backcabecera">
+            <img src="../gifs/cabecera portafolio arqui.gif" class="backcabeceraAnimación">
+        </div>
+        <header>
+            <div>
+                <img src="/ÍCONOS/Portafolio menú.svg" class="íconoÍndice">
             </div>
-            <img src="./Index-Gallery/foto-portafolio.gif" class="retrato hidden"/>
+            <div class="índice">
+                <li class="botonIndice hidden"><a href="./" class="botonIndice">HOME</a></li>
+                <li class="botonIndice hidden"><a href="./CV.html" class="botonIndice">CV</a></li>
+                <li class="botonIndice hidden"><a href="./" class="botonIndice">PROYECTOS</a></li>
+                <li class="botonIndice hidden"><a href="./" class="botonIndice">CONTACTO</a></li>
+            </div>
+        </header>
+        <section >
+
+        </section>
+        <div id="cabecera1">
+            <h1 class="nombre hidden"><span id="nombreI"></span></h1>
             <p class="introGalería hidden">
                 En esta página encontrarás algunos de los proyectos que representan mi trayectoria profesional. <b>Desliza hacia abajo</b> y selecciona una imagen para empezar.
             </p>
@@ -33,35 +35,21 @@
                 <h2 class="portafolio">Portafolio</h2>
                 <h3 class="hazClick">HAZ CLICK EN LA IMÁGEN QUE TE LLAME LA ATENCIÓN</h3>
             </div>
-            <div>
-                <img src="/ÍCONOS/Portafolio menú.svg" class="íconoÍndice">
-            </div>
         </div>
-        <div class="índice">
-<!--             <a href="./" class="botonIndice">HOME</a>
-            <a href="./" class="botonIndice">CV</a>
-            <a href="./" class="botonIndice">PROYECTOS</a>
-            <a href="./" class="botonIndice">CONTACTO</a> -->
-            <li class="botonIndice hidden"><a href="./" class="botonIndice">HOME</a></li>
-            <li class="botonIndice hidden"><a href="./" class="botonIndice">CV</a></li>
-            <li class="botonIndice hidden"><a href="./" class="botonIndice">PROYECTOS</a></li>
-            <li class="botonIndice hidden"><a href="./" class="botonIndice">CONTACTO</a></li>
-        </div>
-
     </section>
     <section id="muestra" class = "hidden">
 
         <div>
         <div id="galería">
             <div class="container">
-
+                
             </div>
             <div id="galería1">
                 <img class="imagen1 img" src="./Index-Gallery/1.png">
                 <img class="imagen1 img" src="./Index-Gallery/3.jpg">
                 <img class="imagen1 img" src="./Index-Gallery/5.jpg">
                 <img class="imagen1 img" src="./Index-Gallery/7.png">
-
+                
             </div>
             <div id="galería2">
                 <img class="imagen img" src="./Index-Gallery/2.png">
@@ -84,27 +72,29 @@
         </div>
         
         <div id="galeríaCel">
+            <div class="container2">
+            </div>
             <div id="galería4">
-                <img class="imagen1" src="./Index-Gallery/1.png">
-                <img class="imagen1" src="./Index-Gallery/3.jpg">
-                <img class="imagen1" src="./Index-Gallery/5.jpg">
-                <img class="imagen1" src="./Index-Gallery/7.png">
-                <img class="imagen" src="./Index-Gallery/14.png">
-                <img class="imagen" src="./Index-Gallery/15.jpg">
-                <img class="imagen" src="./Index-Gallery/10.png">
-                <img class="imagen" src="./Index-Gallery/11.png">
-                <img class="imagen" src="./Index-Gallery/12.png">
+                <img class="imagen4 img" src="./Index-Gallery/1.png">
+                <img class="imagen4 img" src="./Index-Gallery/3.jpg">
+                <img class="imagen4 img" src="./Index-Gallery/5.jpg">
+                <img class="imagen4 img" src="./Index-Gallery/7.png">
+                <img class="imagen4 img" src="./Index-Gallery/14.png">
+                <img class="imagen4 img" src="./Index-Gallery/15.jpg">
+                <img class="imagen4 img" src="./Index-Gallery/10.png">
+                <img class="imagen4 img" src="./Index-Gallery/11.png">
+                <img class="imagen4 img" src="./Index-Gallery/12.png">
             </div>
             <div id="galería5">
-                <img class="imagen" src="./Index-Gallery/2.png">
-                <img class="imagen" src="./Index-Gallery/4.png">
-                <img class="imagen" src="./Index-Gallery/8.png">
-                <img class="imagen" src="./Index-Gallery/9.png">
-                <img class="imagen" src="./Index-Gallery/16.png">
-                <img class="imagen" src="./Index-Gallery/17.png">
-                <img class="imagen" src="./Index-Gallery/18.png">
-                <img class="imagen" src="./Index-Gallery/6.png">
-                <img class="imagen" src="./Index-Gallery/13.png">
+                <img class="imagen5 img" src="./Index-Gallery/2.png">
+                <img class="imagen5 img" src="./Index-Gallery/4.png">
+                <img class="imagen5 img" src="./Index-Gallery/6.png">
+                <img class="imagen5 img" src="./Index-Gallery/8.png">
+                <img class="imagen5 img" src="./Index-Gallery/9.png">
+                <img class="imagen5 img" src="./Index-Gallery/16.png">
+                <img class="imagen5 img" src="./Index-Gallery/17.png">
+                <img class="imagen5 img" src="./Index-Gallery/18.png">
+                <img class="imagen5 img" src="./Index-Gallery/13.png">
             </div>
             <div id="galería3">
             </div>
