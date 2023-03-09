@@ -50,23 +50,22 @@ var imagen58 = document.getElementsByClassName("imagen5")[8];
 
 var palabraFrente = document.querySelector("#nombreI") 
 var palabra = document.querySelector(".nombre") 
+var x = window.matchMedia("(max-width:1400px)")
+var y = window.matchMedia("(max-width:1200px)")
 
 const hiddenElements = document.querySelectorAll ('.hidden');
 
 window.addEventListener("scroll", function() {
-    var x = window.matchMedia("(max-width:1400px)")
-    var y = window.matchMedia("(max-width:1200px)")
     if (x===false){
         header.classList.toggle("sticky",window.scrollY > 520);
     }
     else if (y){
-        header.classList.toggle("sticky",window.scrollY > 100000);
+        header.classList.toogle("sticky",window.scrollY > 1000);
         palabra.style.opacity=("20%")
     }
     else {header.classList.toggle("sticky",window.scrollY > 200)}
 })
 function crearPalabra () {
-    var y = window.matchMedia("(max-width:1200px)")
     let palabras = ["Vida", "Diseño", "Arte", "Técnica", "Arquitectura", "Biofilia", "Habitar", "Espacio", "Vacíos", "Materia", "Flujo", "Soporte", "Tejido","Piel", "Vínculo", "Textura", "Fenómeno", "Hito", "Paradigmático", "Paramétrico", "Escala", "Fluidez", "Modular", "Ensamble", "Edificar", "Fachada", "Habitáculo", "Mansión", "Muro", "Pared", "Pilar", "Suelo", "Techumbre", "Ventana", "Color", "Composición", "Creatividad", "Dibujo", "Diseño", "Estilo", "Forma", "Funcionalidad", "Grafismo", "Ilustración", "Imágenes", "Innovación", "Interfaz", "Línea", "Logotipo", "Marca", "Medios", "Patrón", "Plantilla", "Proporción", "Adaptabilidad", "Comunicación", "Cooperación", "Creatividad", "Empatía", "Flexibilidad", "Liderazgo", "Negociación", "Organización", "Paciencia", "Ladrillo", "Cemento", "Arena", "Grava", "Piedra", "Mortero", "Adoquín", "Hormigón", "Yeso", "Cal", "Azulejo", "Madera", "Metal", "Vidrio", "Plástico"]
     let palabraAleatoria = aleatorio (0, palabras.length -1)
     palabraFrente.innerHTML = palabras [palabraAleatoria];
