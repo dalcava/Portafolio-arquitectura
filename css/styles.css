@@ -8,7 +8,7 @@
     src: url("../fonts/Helvetica.TTF");
 }
 body {
-    background: linear-gradient(173deg, rgb(174, 197, 188) 20%, rgb(221 219 219) 30%, rgba(255,255,255,0) 35%);
+    background: linear-gradient(173deg, rgb(174, 197, 188) 20%, rgb(221 219 219) 30%, rgb(255, 255, 255) 35%);
     width: 100%;
 }
 #Cabecera{
@@ -580,7 +580,7 @@ header.sticky:hover{
 }
 @media (max-width:1400px) {
     body{
-        background: linear-gradient(173deg, rgb(144 199 176) 10%, rgb(221 219 219) 20%, rgba(255,255,255,0) 25%);
+        background: linear-gradient(173deg, rgb(144 199 176) 10%, rgb(221 219 219) 20%, rgb(255, 255, 255) 25%);
         width: 100%;
     }
     #cabecera1 {
@@ -764,7 +764,7 @@ header.sticky:hover{
 }
 @media (max-width:1200px) and (min-height:1200px) {
     body {
-        background: linear-gradient(173deg, rgb(144 199 176) 5%, rgb(221 219 219) 20%, rgba(255,255,255,0) 35%);
+        background: linear-gradient(173deg, rgb(144 199 176) 5%, rgb(221 219 219) 20%, rgb(255, 255, 255) 35%);
         width: 100%;
     }
     .backcabecera {
