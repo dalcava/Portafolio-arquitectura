@@ -52,19 +52,37 @@ var palabraFrente = document.querySelector("#nombreI")
 var palabra = document.querySelector(".nombre") 
 var x = window.matchMedia("(max-width:1400px)")
 var y = window.matchMedia("(max-width:1200px)")
+var logosProyectos = document.querySelector (".logosProyectos")
+const proyectos = document.querySelectorAll (".proyectos")
 
 const hiddenElements = document.querySelectorAll ('.hidden');
 
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+    anchor.addEventListener("click", function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth"
+        })
+    })
+})
+
 window.addEventListener("scroll", function() {
     if (x===false){
-        header.classList.toggle("sticky",window.scrollY > 520);
-    }
+        header.classList.toggle("sticky",window.scrollY > 520);}
     else if (y){
-        header.classList.toogle("sticky",window.scrollY > 1000);
-        palabra.style.opacity=("20%")
+        header.classList.toggle("sticky",window.scrollY > 520);
     }
     else {header.classList.toggle("sticky",window.scrollY > 200)}
 })
+window.addEventListener("scroll", function() {
+    logosProyectos.classList.toggle("subir",window.scrollY >520);
+})
+proyectos.forEach((proyecto) => {
+    window.addEventListener("scroll", function() {
+        proyecto.classList.toggle("subir",window.scrollY >520);
+    });
+});
+
 function crearPalabra () {
     let palabras = ["Vida", "Diseño", "Arte", "Técnica", "Arquitectura", "Biofilia", "Habitar", "Espacio", "Vacíos", "Materia", "Flujo", "Soporte", "Tejido","Piel", "Vínculo", "Textura", "Fenómeno", "Hito", "Paradigmático", "Paramétrico", "Escala", "Fluidez", "Modular", "Ensamble", "Edificar", "Fachada", "Habitáculo", "Mansión", "Muro", "Pared", "Pilar", "Suelo", "Techumbre", "Ventana", "Color", "Composición", "Creatividad", "Dibujo", "Diseño", "Estilo", "Forma", "Funcionalidad", "Grafismo", "Ilustración", "Imágenes", "Innovación", "Interfaz", "Línea", "Logotipo", "Marca", "Medios", "Patrón", "Plantilla", "Proporción", "Adaptabilidad", "Comunicación", "Cooperación", "Creatividad", "Empatía", "Flexibilidad", "Liderazgo", "Negociación", "Organización", "Paciencia", "Ladrillo", "Cemento", "Arena", "Grava", "Piedra", "Mortero", "Adoquín", "Hormigón", "Yeso", "Cal", "Azulejo", "Madera", "Metal", "Vidrio", "Plástico"]
     let palabraAleatoria = aleatorio (0, palabras.length -1)
@@ -98,6 +116,7 @@ window.onload = function() {
     icono.classList.add("brillo");
     crearPalabra();
 }
+
 function expandirBack1 (){
     backGalería.classList.toggle("contain1");
 }
@@ -221,20 +240,18 @@ imagen52.addEventListener("mouseover", expandirBack11);
 imagen52.addEventListener("mouseleave", expandirBack11);
 
 palabraFrente.addEventListener("mouseover", crearPalabra);
-setInterval(crearPalabra, 500);
+setInterval(crearPalabra, 150);
 
 const container = document.querySelector(".container");
 const container2 = document.querySelector(".container2");
 
-// select all the image elements and add event listeners to them
-
 images.forEach((image) => {
   image.addEventListener("mouseenter", () => {
-    // set the background image of the container element to the source of the hovered image
     container.style.backgroundImage = `url(${image.src})`;
     container.style.opacity = "80%"
     container2.style.backgroundImage = `url(${image.src})`;
     container2.style.opacity = "80%"
+    image.style.opacity = "80%"
   });
 });
 images.forEach((image) => {
@@ -242,6 +259,23 @@ images.forEach((image) => {
       container.style.backgroundImage = "none";
       container.style.opacity = "20%"
       container2.style.backgroundImage = "none";
-      container2.style.opacity = "80%"
+      container2.style.opacity = "20%"
     });
   });
+  function opacarImagen() {
+    images.forEach((image) => {
+      let opacity = parseFloat(image.style.opacity);
+      if (opacity <= 1) {
+        let targetOpacity = opacity + 1;
+        let interval = setInterval(() => {
+          if (opacity < targetOpacity) {
+            opacity += 0.05;
+            image.style.opacity = opacity;
+          } else {
+            clearInterval(interval);
+          }
+        }, 50);
+      }
+    });
+  }
+setInterval(opacarImagen, 5000);
